@@ -2,3 +2,23 @@
   --primary-color: #E72870;
   --secondary-color: #F7E200;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+.nav {
+  border-bottom: 2px solid var(--primary-color);
+  background-color: var(--primary-color);
+  height: 10vh;
+  z-index: 100;
+}
