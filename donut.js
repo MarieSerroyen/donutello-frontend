@@ -1,4 +1,5 @@
-
+//import configerstyle.ccs
+import './configerstyle.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
@@ -24,6 +25,7 @@ camera.position.y = 2;
 
 
 
+
 // add donut 
 let donut;
 const gltfLoader = new GLTFLoader();
@@ -34,9 +36,12 @@ scene.add(donut);
 donut.position.y = 0.5;
 });
 
+
+
 function animate() {
 requestAnimationFrame( animate );
 renderer.render( scene, camera );
 }
 
 animate();
+
