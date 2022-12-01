@@ -27,14 +27,38 @@ camera.position.y = 2;
 
 
 // add donut 
-let donut;
+let sprinkel;
 const gltfLoader = new GLTFLoader();
 gltfLoader.load('/assets/models/donut-marie.gltf', (gltf) => {
-donut = gltf.scene;
+sprinkel = gltf.scene;
 gltf.scene.scale.set(20,20,20);
-scene.add(donut);
-donut.position.y = 0.5;
+scene.add(sprinkel);
+sprinkel.position.y = 0.5;
+sprinkel.getObjectByName('Sprinkel').material.color.set(0x00FF00);
 });
+
+//const assetloader = new GLTFLoader();
+
+
+//assetloader.load('/assets/models/donut-marie.gltf', (gltf) => {
+ 
+  //const model = gltf.scene;
+  //scene.add(model);
+  //console.log(model.getObjectByName('Donut'));
+ //model.getObjectByName('Donut').material.color.set(0x00FF00);
+
+//});
+
+
+
+
+
+// define Sprinkel
+//
+//new THREE.SphereGeometry(0.1, 32, 32),
+//new THREE.MeshBasicMaterial({ color: 0x00FF00 })
+
+
 
 
 
@@ -45,3 +69,15 @@ renderer.render( scene, camera );
 
 animate();
 
+
+document.querySelector('.recolor').addEventListener('click', () => {
+  sprinkel.traverse((child) => {
+     if (child.isMesh) {
+      sprinkel.getObjectByName('Sprinkel').material.color.set(0xffff00);
+     }
+   });
+   
+     cube.material.color.set(0xffff00);
+   });
+
+   
