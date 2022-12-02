@@ -16,6 +16,7 @@ body {
   padding: 0px;
   overflow-x: hidden;
   font-family: 'Dosis', sans-serif;
+  line-height: 1.5;
 }
 
 /*NAV*/
@@ -89,11 +90,30 @@ body {
 /*FOOTER*/
 footer {
   background-color: var(--primary-color);
-  height: 60vh;
+  height: 120vh;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   color: var(--neutral-color);
 }
+
+.list{
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  column-gap: 50px;
+  justify-content: center;
+  align-items: center;
+  padding-right: 40px;
+  position: relative;
+}
+
+.list__item {
+  list-style: none;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
