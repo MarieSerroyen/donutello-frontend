@@ -120,6 +120,22 @@ footer {
   text-align: center;
 }
 
+.list__item--small{
+  font-size: 0.75rem;
+}
+
+.footer__policies{
+  display: flex;
+}
+
+.list--policies {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0;
+}
+
 .footer__socialmedia{
   width: 100%;
   display: flex;
@@ -127,6 +143,7 @@ footer {
   align-items: center;
   margin-top: 20px;
   position: relative;
+  margin-top: 0;
 }
 
 .socialmedia__icon{
