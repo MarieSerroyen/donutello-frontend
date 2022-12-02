@@ -57,7 +57,7 @@ a {
 }
 
 .container--body {
-  height: 200vh;
+  height: 230vh;
 }
 
 .container__title {
@@ -77,15 +77,26 @@ a {
   font-size: 1.75rem;
   margin-top: 50px;
   margin-left: 1.7rem;
+  margin-bottom: 40px;
 }
 
 .container__text {
   font-size: 2rem;
   font-weight: 400;
-  text-align: center;
   padding-left: 5px;
   padding-right: 5px;
   margin-bottom: 60px;
+}
+
+.container__text--img{
+  text-align: center;
+}
+
+.container__text--normal{
+  color: black;
+  font-size: 1.2rem;
+  margin-left: 1.7rem;
+  margin-bottom: 1rem;
 }
 
 .btn {
@@ -101,6 +112,12 @@ a {
   cursor: pointer;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.btn--pink{
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  margin-left: 110px;
 }
 
 .text--highlight{
