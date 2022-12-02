@@ -17,8 +17,8 @@ document.body.appendChild( renderer.domElement );
 //add orbit controls
 const controls = new OrbitControls(camera, renderer.domElement);
 
-const dire = new THREE.DirectionalLight(0xffffff, 2);
-dire.position.set(2, 4, 2);
+const dire = new THREE.DirectionalLight(0xffffff, 3);
+dire.position.set(2, 1, 1);
 scene.add(dire);
 camera.position.z = 5;
 camera.position.y = 2;
@@ -29,12 +29,12 @@ camera.position.y = 2;
 // add donut 
 let sprinkel;
 const gltfLoader = new GLTFLoader();
-gltfLoader.load('/assets/models/donut-marie.gltf', (gltf) => {
+gltfLoader.load('/assets/models/donut-larissa.gltf', (gltf) => {
 sprinkel = gltf.scene;
 gltf.scene.scale.set(20,20,20);
 scene.add(sprinkel);
 sprinkel.position.y = 0.5;
-sprinkel.getObjectByName('Sprinkel').material.color.set(0x00FF00);
+sprinkel.getObjectByName('Sphere').material.color.set(0xFFFFFF);
 });
 
 //const assetloader = new GLTFLoader();
