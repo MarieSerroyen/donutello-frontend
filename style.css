@@ -56,6 +56,10 @@ a {
   align-items: center;
 }
 
+.container--body {
+  height: 200vh;
+}
+
 .container__title {
   font-size: 4rem;
   font-weight: 700;
