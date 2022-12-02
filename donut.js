@@ -7,7 +7,7 @@ import { Loader } from 'three';
 
 const scene = new THREE.Scene();
 // change scene background color
-scene.background = new THREE.Color( 0xE1E0E0 );
+scene.background = new THREE.Color( 0xFFFFFF );
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
 const renderer = new THREE.WebGLRenderer();
@@ -34,7 +34,7 @@ sprinkel = gltf.scene;
 gltf.scene.scale.set(20,20,20);
 scene.add(sprinkel);
 sprinkel.position.y = 0.5;
-sprinkel.getObjectByName('Sphere').material.color.set(0xFFFFFF);
+sprinkel.getObjectByName('glaze').material.color.set(0xFFFFFF);
 });
 
 //const assetloader = new GLTFLoader();
@@ -70,10 +70,10 @@ renderer.render( scene, camera );
 animate();
 
 
-document.querySelector('.recolor').addEventListener('click', () => {
+document.querySelector('.recolor-btn').addEventListener('click', () => {
   sprinkel.traverse((child) => {
      if (child.isMesh) {
-      sprinkel.getObjectByName('Sprinkel').material.color.set(0xffff00);
+      sprinkel.getObjectByName('glaze').material.color.set(0xffff00);
      }
    });
    
