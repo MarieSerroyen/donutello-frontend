@@ -16,7 +16,10 @@ body {
   padding: 0px;
   overflow-x: hidden;
   font-family: 'Dosis', sans-serif;
-  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
 }
 
 /*NAV*/
@@ -90,13 +93,14 @@ body {
 /*FOOTER*/
 footer {
   background-color: var(--primary-color);
-  height: 120vh;
+  height: 65vh;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   color: var(--neutral-color);
+  position: relative;
 }
 
 .list{
@@ -106,7 +110,6 @@ footer {
   justify-content: center;
   align-items: center;
   padding-right: 40px;
-  position: relative;
 }
 
 .list__item {
@@ -115,5 +118,36 @@ footer {
   font-weight: 400;
   margin-bottom: 15px;
   text-align: center;
+}
+
+.list__item--small{
+  font-size: 0.75rem;
+}
+
+.footer__policies{
+  display: flex;
+}
+
+.list--policies {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0;
+}
+
+.footer__socialmedia{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px;
+  position: relative;
+  margin-top: 0;
+}
+
+.socialmedia__icon{
+  width: 40%;
+  height: 50px;
 }
 
