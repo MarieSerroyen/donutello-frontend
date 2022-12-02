@@ -43,7 +43,6 @@ a {
 .container {
   width: 100%;
   height: 100%;
-  display: flex;
   color: var(--neutral-color);
   display: flex;
   flex-direction: column;
@@ -106,12 +105,27 @@ a {
 
 .step {
   display: flex;
+  flex-direction: column;
 }
 
 .step__title{
   color: var(--primary-color);
   font-size: 1.5rem;
   margin-left: 2rem;
+  margin-bottom: 0;
+}
+
+.step__text {
+  color: black;
+  font-size: 1.2rem;
+  margin-left: 2rem;
+  margin-right: 1rem;
+}
+
+.step__img{
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*FOOTER*/
