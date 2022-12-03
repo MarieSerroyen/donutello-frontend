@@ -236,6 +236,23 @@ footer {
     margin-bottom: 40px;
   }
 
+  .container__cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .btn--pink {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .container__cta .container__title--h2 {
+    margin-left: 0;
+  }
+
   /*FOOTER*/
 
   footer {
