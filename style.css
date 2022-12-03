@@ -99,6 +99,10 @@ a {
   margin-bottom: 1rem;
 }
 
+.mascotte__img {
+  display: none;
+}
+
 .btn {
   background-color: var(--secondary-color);
   color: var(--primary-color);
@@ -223,6 +227,24 @@ footer {
     justify-content: center;
     align-items: center;
   }
+
+  .container__head{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .mascotte__img {
+    display: block;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+  }
+  
 
   .steps {
     display: grid;
