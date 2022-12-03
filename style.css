@@ -210,3 +210,8 @@ footer {
   height: 50px;
 }
 
+@media (min-width: 1130px) {
+  .nav__logo{
+    width: 10%;
+  }
+}
