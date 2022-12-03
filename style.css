@@ -210,6 +210,21 @@ footer {
   height: 50px;
 }
 
+@media (min-width: 900px) {
+
+  .nav__logo{
+    width: 20%;
+  }
+
+  .container--top {
+    background-image: url("/images/landingpage-img.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 @media (min-width: 1130px) {
   .nav__logo{
     width: 10%;
