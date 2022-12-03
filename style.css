@@ -226,7 +226,20 @@ footer {
 }
 
 @media (min-width: 1130px) {
+
   .nav__logo{
     width: 10%;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .step__img{
+    width: 70%;
+    margin-left: 30px;
+    display: flex;
+    margin-bottom: 40px;
   }
 }
