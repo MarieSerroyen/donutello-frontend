@@ -1,24 +1,12 @@
-*{
-  margin: 0;
-  padding: 0;
-  font-family: 'Dosis', sans-serif;
-}
-
-:root {
-  --primary-color: #E72870;
-  --secondary-color: #F7E200;
-  --neutral-color: #FFFFFF;
-}
-
-
 
 .config-box{
   background-color: rgb(219, 216, 216);
   width: 100%;
   height: 100%;
   padding: 1em;
+  padding-top: 2em;
   padding-bottom: 2em;
-
+  margin-top: 4.5em;
 }
 
 h1{
@@ -50,8 +38,8 @@ h2{
   .recolor-btn{
     display: inline-block;
     background-color: #86584A;
-    height: 4.7em;
-    width: 4.7em;
+    height: 4em;
+    width: 4em;
    
   }
   .recolor-btn:hover{
