@@ -1,4 +1,4 @@
-//import configerstyle.ccs
+
 import './configerstyle.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
@@ -27,14 +27,14 @@ camera.position.y = 2;
 
 
 // add donut 
-let sprinkel;
+let config;
 const gltfLoader = new GLTFLoader();
 gltfLoader.load('/assets/models/donut-larissa.gltf', (gltf) => {
-sprinkel = gltf.scene;
+config = gltf.scene;
 gltf.scene.scale.set(20,20,20);
-scene.add(sprinkel);
-sprinkel.position.y = 0.5;
-sprinkel.getObjectByName('glaze').material.color.set(0xFFFFFF);
+scene.add(config);
+config.position.y = 0.5;
+config.getObjectByName('glaze').material.color.set("");
 });
 
 //const assetloader = new GLTFLoader();
@@ -70,14 +70,32 @@ renderer.render( scene, camera );
 animate();
 
 
-document.querySelector('.recolor-btn').addEventListener('click', () => {
-  sprinkel.traverse((child) => {
-     if (child.isMesh) {
-      sprinkel.getObjectByName('glaze').material.color.set(0xffff00);
-     }
-   });
+//document.querySelector('.glaze-colors').addEventListener('click', () => {
+  //console.log('click');
+  //config.traverse((child) => {
+    // if (child.isMesh = '.recolor-btn') {
+      //config.getObjectByName('glaze').material.color.set(0x86584A);
+      
+     //}
    
-     cube.material.color.set(0xffff00);
-   });
+   //});
+   
+//});
 
-   
+
+
+// get .glaze-colors and add event listener to each child element 
+const glazeColors = document.querySelector('.glaze-colors');
+glazeColors.addEventListener('click', (e) => {
+  //console.log(e.target);
+  //console.log(e.target.classList);
+  //console.log(e.target.classList.contains('recolor-btn'));
+  if (e.target.classList.contains('recolor-btn')) {
+    //console.log('click');
+    config.traverse((child) => {
+      if (child.isMesh) {
+        config.getObjectByName('glaze').material.color.set(e.target.dataset.color);
+      }
+    });
+  }
+});
