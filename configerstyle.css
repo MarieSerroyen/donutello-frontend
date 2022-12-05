@@ -25,7 +25,7 @@ hr{
 h2{
   color: black;
   font-size: 1.5em;
-  padding-bottom: 0.7em;
+  
 }
 
 .glaze-colors{
@@ -90,8 +90,41 @@ h2{
       cursor: pointer;
       text-decoration: none;
       text-transform: uppercase;
-     
+      display: inline-block;
   }
   
-  
+  /*toppings*/
 
+  .toppings-wrapper{
+  display: flex; 
+  flex-direction: row;
+  align-items: center;
+  gap: 2em;
+  place-items: center;
+  margin-bottom:0.7em ;
+  }
+
+  .toppings-container{
+    display: flex;
+    align-items: center;
+  }
+
+  label{
+    margin-left: 0.5em;
+  }
+  input[type="checkbox"]{
+    appearance: none;
+    height: 1.5em;
+    width: 1.5em;
+    background-color: #bdbdbd;
+    border-radius: 0.2em;
+    cursor: pointer;
+  }
+  input[type="checkbox"]:checked{
+    background-color: var(--primary-color);
+  }
+
+
+
+
+ 
