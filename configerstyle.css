@@ -124,7 +124,45 @@ h2{
     background-color: var(--primary-color);
   }
 
+.topping-2{
+  text-decoration: line-through;
+  color: black;
+}
 
+#tooltip{
+  position: relative;
+  cursor: pointer;
 
+}
+
+#tooltipText{
+  position: absolute;
+  left: 50%;
+  top:-0%;
+  transform: translateX(-50%);
+  background-color: #000000;
+  padding: 5px 20px;
+  border-radius: 5px;
+  color: white;
+  white-space: nowrap;
+  font-size: 10px;
+  visibility: hidden;
+}
+
+#tooltipText::before{
+  content: "";
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 15px solid;
+  border-color: #000 #0000 #0000 #0000;
+}
+
+#tooltip:hover #tooltipText{
+  top:-120%;
+  visibility: visible;
+  opacity: 1;
+}
 
  
