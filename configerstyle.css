@@ -38,8 +38,8 @@ h2{
   .recolor-btn{
     display: inline-block;
     background-color: #86584A;
-    height: 4em;
-    width: 4em;
+    height: 2.5em;
+    width: 2.5em;
    
   }
   .recolor-btn:hover{
@@ -122,6 +122,7 @@ h2{
   }
   input[type="checkbox"]:checked{
     background-color: var(--primary-color);
+    
   }
 
 .topping-2{

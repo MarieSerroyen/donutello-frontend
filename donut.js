@@ -83,14 +83,11 @@ glazeColors.addEventListener('click', (e) => {
 
 
 //topping
-// make Sphere invisible
-const sphereLayer = config.getObjectByName('Sphere');
-sphereLayer.visible = false;
 
 
 
-// show sprinkels when checkbox clicked
-document.querySelector('.sprinkels-checkbox').addEventListener('click', () => {
+// when checkbox is unchecked, hide sprinkels
+document.querySelector('#topping-1').addEventListener('click', () => {
   console.log('click');
   config.traverse((child) => {
     if (child.isMesh) {
