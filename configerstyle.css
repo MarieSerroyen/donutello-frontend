@@ -35,6 +35,13 @@ h2{
   width: 100%;
 }
 
+.sprinkle-colors{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1em;
+  width: 100%;
+}
+
   .recolor-btn{
     display: inline-block;
     background-color: #86584A;

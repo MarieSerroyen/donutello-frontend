@@ -32,9 +32,10 @@ config = gltf.scene;
 gltf.scene.scale.set(8,8,8);
 scene.add(config);
 config.getObjectByName('glaze').material.color.set("");
+config.getObjectByName('Sphere').material.color.set("");
 });
 
- 
+
 
 
 
@@ -78,6 +79,18 @@ glazeColors.addEventListener('click', (e) => {
 });
 
 
+// sprinkles laten veranderen van kleur
+const sprinkleColors = document.querySelector('.sprinkle-colors');
+sprinkleColors.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (e.target.classList.contains('recolor-btn')) {
+    config.traverse((child) => {
+      if (child.isMesh) {
+        config.getObjectByName('Sphere').material.color.set(e.target.dataset.color);
+      }
+    });
+  }
+});
 
 
 
@@ -91,7 +104,7 @@ document.querySelector('#topping-1').addEventListener('click', () => {
   console.log('click');
   config.traverse((child) => {
     if (child.isMesh) {
-      config.getObjectByName('Sphere').visible = true;
+      config.getObjectByName('Sphere').display = none;
     }
   });
 });
