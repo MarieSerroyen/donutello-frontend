@@ -104,7 +104,7 @@ document.querySelector('#topping-1').addEventListener('click', () => {
   console.log('click');
   config.traverse((child) => {
     if (child.isMesh) {
-      config.getObjectByName('Sphere').display = none;
+      config.getObjectByName('Sphere').visible = false;
     }
   });
 });
