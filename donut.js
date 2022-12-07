@@ -64,16 +64,11 @@ animate();
 
 
 
-// probeersel voor meerdere kleuren
-
-// get .glaze-colors and add event listener to each child element 
+// Glaze laten veranderen van kleur
 const glazeColors = document.querySelector('.glaze-colors');
 glazeColors.addEventListener('click', (e) => {
-  //console.log(e.target);
-  //console.log(e.target.classList);
-  //console.log(e.target.classList.contains('recolor-btn'));
+  e.preventDefault();
   if (e.target.classList.contains('recolor-btn')) {
-    //console.log('click');
     config.traverse((child) => {
       if (child.isMesh) {
         config.getObjectByName('glaze').material.color.set(e.target.dataset.color);
