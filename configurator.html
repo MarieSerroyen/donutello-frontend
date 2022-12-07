@@ -1,18 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/images/donuttello-logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
-
-    <title>Donuttello - Maak je eigen donut</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-    <script type="module" src="/donut.js"></script>
+    <nav class="nav">
+        <img class="nav__logo" src="/images/donuttello-logo.png" alt="Donuttello logo">
+    </nav>
 
-    <a href ="#" class="recolor" ></a>
+
+    <script type="module" src="/donut.js"></script>
+<div class="config-box">
+    <h1> Mijn donut  🖍️</h1>
+    <hr>
+
+    <h2>Glazuur</h2>
+    <div class="glaze-colors">
+        <a href ="#" class="recolor-btn" data-color="#86584A" ></a>
+        <a href ="#" class="recolor-btn recolor__white" data-color="white"></a>
+        <a href ="#" class="recolor-btn recolor__darkpink" data-color="#E26396" ></a>
+        <a href ="#" class="recolor-btn recolor__darkbrown" data-color="#4B2B19" ></a>
+        <a href ="#" class="recolor-btn recolor__gold"  data-color="#F6C659" ></a>
+        <a href ="#" class="recolor-btn recolor__green" data-color="#B9E378" ></a>
+        <a href ="#" class="recolor-btn recolor__blue" data-color="#A2E0D5" ></a>
+        <a href ="#" class="recolor-btn recolor__pink" data-color="pink" ></a>
+    </div>
+    <hr>
+        <h2>Logo</h2>
+    <hr>
+        <h2>Toppings</h2>      
+        <div class="toppings-wrapper">
+            <div class="toppings-container">
+              <input type="checkbox" id="topping-1" />
+              <label for="topping-1"> Sprinkels</label>
+            </div>
+            <div id="tooltip">
+                <span id="tooltipText">Uitverkocht</span>
+            <div class="toppings-container">
+                <input type="checkbox" id="topping-2" />
+                <label class="topping-2" for="topping-2">Parels</label>
+              </div>
+          </div>
+        </div>
+        <div>
+            <a class="config-btn" href="#">Opslaan</a>
+        </div>
+</div>
+
 </body>
 </html>

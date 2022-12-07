@@ -1,4 +1,4 @@
-//import configerstyle.ccs
+
 import './configerstyle.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
@@ -7,7 +7,7 @@ import { Loader } from 'three';
 
 const scene = new THREE.Scene();
 // change scene background color
-scene.background = new THREE.Color( 0xE1E0E0 );
+scene.background = new THREE.Color( 0xFFFFFF );
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
 const renderer = new THREE.WebGLRenderer();
@@ -24,39 +24,29 @@ camera.position.z = 5;
 camera.position.y = 2;
 
 
-
-
 // add donut 
-let sprinkel;
+let config;
 const gltfLoader = new GLTFLoader();
 gltfLoader.load('/assets/models/donut-larissa.gltf', (gltf) => {
-sprinkel = gltf.scene;
-gltf.scene.scale.set(20,20,20);
-scene.add(sprinkel);
-sprinkel.position.y = 0.5;
-sprinkel.getObjectByName('Sphere').material.color.set(0xFFFFFF);
+config = gltf.scene;
+gltf.scene.scale.set(8,8,8);
+scene.add(config);
+config.getObjectByName('glaze').material.color.set("");
 });
 
-//const assetloader = new GLTFLoader();
-
-
-//assetloader.load('/assets/models/donut-marie.gltf', (gltf) => {
  
-  //const model = gltf.scene;
-  //scene.add(model);
-  //console.log(model.getObjectByName('Donut'));
- //model.getObjectByName('Donut').material.color.set(0x00FF00);
-
-//});
 
 
 
 
 
-// define Sprinkel
-//
-//new THREE.SphereGeometry(0.1, 32, 32),
-//new THREE.MeshBasicMaterial({ color: 0x00FF00 })
+//logo tags
+// add box plane geometry
+//const planeGeometry = new THREE.PlaneGeometry(10, 10);
+//const planeMaterial = new THREE.MeshBasicMaterial({color: 0xff0099});
+//planeMaterial.map = brickTexture;
+//const plane = new THREE.Mesh( planeGeometry, planeMaterial );
+//scene.add(plane);
 
 
 
@@ -70,14 +60,46 @@ renderer.render( scene, camera );
 animate();
 
 
-document.querySelector('.recolor').addEventListener('click', () => {
-  sprinkel.traverse((child) => {
-     if (child.isMesh) {
-      sprinkel.getObjectByName('Sprinkel').material.color.set(0xffff00);
-     }
-   });
-   
-     cube.material.color.set(0xffff00);
-   });
 
-   
+
+
+
+// probeersel voor meerdere kleuren
+
+// get .glaze-colors and add event listener to each child element 
+const glazeColors = document.querySelector('.glaze-colors');
+glazeColors.addEventListener('click', (e) => {
+  //console.log(e.target);
+  //console.log(e.target.classList);
+  //console.log(e.target.classList.contains('recolor-btn'));
+  if (e.target.classList.contains('recolor-btn')) {
+    //console.log('click');
+    config.traverse((child) => {
+      if (child.isMesh) {
+        config.getObjectByName('glaze').material.color.set(e.target.dataset.color);
+      }
+    });
+  }
+});
+
+
+
+
+
+
+//topping
+// make Sphere invisible
+const sphereLayer = config.getObjectByName('Sphere');
+sphereLayer.visible = false;
+
+
+
+// show sprinkels when checkbox clicked
+document.querySelector('.sprinkels-checkbox').addEventListener('click', () => {
+  console.log('click');
+  config.traverse((child) => {
+    if (child.isMesh) {
+      config.getObjectByName('Sphere').visible = true;
+    }
+  });
+});
