@@ -5,6 +5,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { Loader } from 'three';
 
+
 const scene = new THREE.Scene();
 // change scene background color
 scene.background = new THREE.Color( 0xFFFFFF );
@@ -23,6 +24,8 @@ scene.add(dire);
 camera.position.z = 5;
 camera.position.y = 2;
 
+//load texture
+const textureLoader = new THREE.TextureLoader();
 
 // add donut 
 let config;
@@ -50,8 +53,21 @@ config.getObjectByName('Sphere').material.color.set("");
 //scene.add(plane);
 
 
+// Load texture
+const rectangleTexture = textureLoader.load('/name.jpg');
+// add rectangle
+const rectangleGeometry = new THREE.BoxGeometry( 1, 0.7, 0.07 );
+const rectangleMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff} );
+rectangleMaterial.map = rectangleTexture;
+rectangleMaterial.material = THREE.DoubleSide;
 
+const rectangle = new THREE.Mesh( rectangleGeometry, rectangleMaterial );
 
+scene.add( rectangle);
+rectangle.position.y = 0.7;
+rectangle.position.z = -0.5;
+
+rectangle.rotation.x = -1.2;
 
 function animate() {
 requestAnimationFrame( animate );
@@ -86,6 +102,7 @@ sprinkleColors.addEventListener('click', (e) => {
   if (e.target.classList.contains('recolor-btn')) {
     config.traverse((child) => {
       if (child.isMesh) {
+        console.log(child);
         config.getObjectByName('Sphere').material.color.set(e.target.dataset.color);
       }
     });
@@ -101,10 +118,25 @@ sprinkleColors.addEventListener('click', (e) => {
 
 // when checkbox is unchecked, hide sprinkels
 document.querySelector('#topping-1').addEventListener('click', () => {
-  console.log('click');
-  config.traverse((child) => {
-    if (child.isMesh) {
-      config.getObjectByName('Sphere').visible = false;
-    }
-  });
+  // log donut
+  console.log(config.getObjectByName('Sphere'));
+  if (document.querySelector('#topping-1').checked) {
+    config.getObjectByName('Sphere').visible = false;
+    config.getObjectByName('Sphere').opacity = 0;
+
+  } else {
+    config.getObjectByName('Sphere').visible = true;
+    config.getObjectByName('Sphere').opacity = 1;
+  }
 });
+
+// // remove sprinkles
+// const removeSprinkles = document.querySelector('#topping-1');
+// removeSprinkles.addEventListener('click', () => {
+//   if (removeSprinkles.checked) {
+//     config.getObjectByName('Sphere').visible = false;
+//   } else {
+//     config.getObjectByName('Sphere').visible = true;
+
+//   }
+// });
