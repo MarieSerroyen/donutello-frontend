@@ -42,17 +42,6 @@ config.getObjectByName('Sphere').material.color.set("");
 
 
 
-
-
-//logo tags
-// add box plane geometry
-//const planeGeometry = new THREE.PlaneGeometry(10, 10);
-//const planeMaterial = new THREE.MeshBasicMaterial({color: 0xff0099});
-//planeMaterial.map = brickTexture;
-//const plane = new THREE.Mesh( planeGeometry, planeMaterial );
-//scene.add(plane);
-
-
 // Load texture
 const rectangleTexture = textureLoader.load('/name.jpg');
 // add rectangle
@@ -66,8 +55,45 @@ const rectangle = new THREE.Mesh( rectangleGeometry, rectangleMaterial );
 scene.add( rectangle);
 rectangle.position.y = 0.7;
 rectangle.position.z = -0.5;
-
 rectangle.rotation.x = -1.2;
+
+
+// add square
+const squareGeometry = new THREE.BoxGeometry( 0.7, 0.7, 0.07 );
+const squareMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff} );
+const square = new THREE.Mesh( squareGeometry, squareMaterial );
+scene.add( square);
+square.position.y = 0.7;
+square.position.z = -0.5;
+square.rotation.x = -1.2;
+square.visible = false;
+
+//add circle
+const circleGeometry = new THREE.CircleGeometry( 0.5, 32,  );
+const circleMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff } );
+const circle = new THREE.Mesh( circleGeometry, circleMaterial );
+scene.add( circle );
+circle.position.y = 0.7;
+circle.position.z = -0.5;
+circle.rotation.x = -1.2;
+circle.visible = false;
+
+//add oval
+const ovalGeometry = new THREE.CircleGeometry( 0.5, 32,  );
+const ovalMaterial = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
+const oval = new THREE.Mesh( ovalGeometry, ovalMaterial );
+scene.add( oval );
+oval.position.y = 0.7;
+oval.position.z = -0.5;
+oval.rotation.x = -1.2;
+oval.visible = false;
+
+
+
+
+
+
+
 
 function animate() {
 requestAnimationFrame( animate );
@@ -75,6 +101,10 @@ renderer.render( scene, camera );
 }
 
 animate();
+
+
+
+
 
 
 
@@ -93,6 +123,45 @@ glazeColors.addEventListener('click', (e) => {
     });
   }
 });
+
+//logo
+// when checkbox rectangle is checked, show rectangleGeometry
+document.querySelector('#rectangle').addEventListener('click', () => {
+  if (document.querySelector('#rectangle').checked) {
+    rectangle.visible = true;
+  } else {
+    rectangle.visible = false;
+  }
+});
+
+// when checkbox square is checked, show squareGeometry
+document.querySelector('#square').addEventListener('click', () => {
+  if (document.querySelector('#square').checked) {
+    square.visible = true;
+  } else {
+    square.visible = false;
+  }
+});
+
+//when checkbox circle is checked, show circleGeometry
+document.querySelector('#circle').addEventListener('click', () => {
+  if (document.querySelector('#circle').checked) {
+    circle.visible = true;
+  } else {
+    circle.visible = false;
+  }
+});
+
+//when checkbox oval is checked, show ovalGeometry
+document.querySelector('#oval').addEventListener('click', () => {
+  if (document.querySelector('#oval').checked) {
+    oval.visible = true;
+  } else {
+    oval.visible = false;
+  }
+});
+
+
 
 
 // sprinkles laten veranderen van kleur
@@ -114,6 +183,19 @@ sprinkleColors.addEventListener('click', (e) => {
 
 //topping
 
+// when checkbox is unchecked, hide sprinkels
+/*document.querySelector('#topping-1').addEventListener('click', () => {
+  console.log('click');
+  config.traverse((child) => {
+    if (child.isMesh) {
+      config.getObjectByName('Sphere').material.color.set(0x000000);
+      
+    }
+  });
+});*/
+
+
+
 
 
 // when checkbox is unchecked, hide sprinkels
@@ -121,22 +203,44 @@ document.querySelector('#topping-1').addEventListener('click', () => {
   // log donut
   console.log(config.getObjectByName('Sphere'));
   if (document.querySelector('#topping-1').checked) {
-    config.getObjectByName('Sphere').visible = false;
-    config.getObjectByName('Sphere').opacity = 0;
+    config.getObjectByName('Sphere').material.color.set(0xffffff);
+
+    // remove sprinkles
+   
+    
+    
 
   } else {
-    config.getObjectByName('Sphere').visible = true;
-    config.getObjectByName('Sphere').opacity = 1;
+    config.getObjectByName('Sphere').transparent = true;
+    config.getObjectByName('Sphere').position.x = 0.5;
+
+
+
+    config.getObjectByName('Sphere').material.color.set(0x000000);
+    
   }
 });
 
-// // remove sprinkles
-// const removeSprinkles = document.querySelector('#topping-1');
-// removeSprinkles.addEventListener('click', () => {
-//   if (removeSprinkles.checked) {
-//     config.getObjectByName('Sphere').visible = false;
-//   } else {
-//     config.getObjectByName('Sphere').visible = true;
 
-//   }
-// });
+
+
+
+
+
+/*
+// remove sprinkles
+const removeSprinkles = document.querySelector('#topping-1');
+removeSprinkles.addEventListener('click', () => {
+  if (removeSprinkles.checked) {
+    config.children[2].material.opacity = 1;
+    console.log(config);
+    // config.getObjectByName('Sphere').visible = false;
+  } else {
+    // config.getObjectByName('Sphere').visible = true;
+    config.children[2].material.opacity = 0;
+
+    console.log(config);
+
+  } 
+});
+*/
