@@ -17,7 +17,7 @@ document.body.appendChild( renderer.domElement );
 
 //add orbit controls
 const controls = new OrbitControls(camera, renderer.domElement);
-
+controls.enableZoom = false;
 const dire = new THREE.DirectionalLight(0xffffff, 3);
 dire.position.set(2, 1, 1);
 scene.add(dire);
@@ -112,7 +112,7 @@ animate();
 
 
 // Glaze laten veranderen van kleur
-const glazeColors = document.querySelector('.glaze-colors');
+const glazeColors = document.querySelector('.colors');
 glazeColors.addEventListener('click', (e) => {
   e.preventDefault();
   if (e.target.classList.contains('recolor-btn')) {

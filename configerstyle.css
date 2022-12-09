@@ -1,6 +1,6 @@
 
 .config-box{
-  background-color: rgb(219, 216, 216);
+  background-color: rgb(236, 234, 234);
   width: 100%;
   height: 150vh;
   padding: 1em;
@@ -28,18 +28,18 @@ h2{
   
 }
 
-.glaze-colors{
+.colors{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1em;
-  
+  width: 80%;
 }
 
 .sprinkle-colors{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1em;
-
+  width: 80%;
 }
 
   .recolor-btn{
@@ -56,9 +56,6 @@ h2{
 
   .recolor__white{
     background-color: white;
-    border-color: gray;
-    border-style: solid;
-    border-width: 0.01em;
   }
 
   .recolor__darkpink{
@@ -106,7 +103,7 @@ h2{
   display: flex; 
   flex-direction: column;
   
-  gap: 2em;
+  gap: 1.5em;
 
   margin-bottom:0.7em ;
   }
@@ -114,20 +111,22 @@ h2{
   .toppings-container{
     display: flex;
     align-items: center;
-    
+    font-size: 12px;
   }
   .choices{
     display: flex;
     flex-direction: row;
-    
+    gap: 1em;
   }
+
   label{
     margin-left: 0.5em;
   }
+
   input[type="checkbox"]{
     appearance: none;
-    height: 1.5em;
-    width: 1.5em;
+    height: 1em;
+    width: 1em;
     background-color: #bdbdbd;
     border-radius: 0.2em;
     cursor: pointer;
@@ -183,14 +182,16 @@ h2{
   display: flex; 
   flex-direction: row;
   align-items: center;
-  gap: 2em;
+  gap: 1em;
   place-items: center;
   margin-bottom:0.7em ;
+  
   }
 
   .logo-container{
     display: flex;
     align-items: center;
+    font-size: 12px;
   }
 
   .info-options{
@@ -198,4 +199,38 @@ h2{
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1em;
     padding-bottom: 40px;
+    
   }
+h3{
+  font-size: 14px;
+}
+
+  @media (min-width: 500px) {
+    .config-box{
+      width: 100%;
+      
+    }
+  }
+
+  @media (min-width: 1130px) {
+
+    .config-box{
+      width: 32%;
+      margin-left: 2em;
+      height: 130vh;
+      margin-top: 7em;
+      
+    }
+
+    h1{
+      padding-top: 0px;
+      margin-top: 0px;
+    }
+
+    input[type="checkbox"]{
+      appearance: none;
+      height: 1.5em;
+      width: 1.5em;
+    }
+  }
+  
