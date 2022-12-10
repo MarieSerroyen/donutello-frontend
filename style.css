@@ -227,6 +227,22 @@ footer {
   height: 50px;
 }
 
+.logo-button {
+  color: var(--primary-color);
+  padding:  1.1em 2em;
+  border: solid 3px;
+  border-color: var(--primary-color);
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+#uploadedimage {
+  height: 3em;
+  position: relative;
+  top: 18px;
+  left: 10px;
+}
+
 @media (min-width: 500px) {
 
   .nav__logo{

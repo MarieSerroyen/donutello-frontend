@@ -53,7 +53,7 @@ scene.add( rectangle);
 rectangle.position.y = 0.7;
 rectangle.position.z = -0.5;
 rectangle.rotation.x = -1.2;
-rectangle.visible = true;
+rectangle.visible = false;
 
 
 // add square
