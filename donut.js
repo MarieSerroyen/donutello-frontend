@@ -4,6 +4,9 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { Loader } from 'three';
+// import './upload_widget.js'
+
+// console.log(image);
 
 
 const scene = new THREE.Scene();
@@ -40,14 +43,12 @@ config.getObjectByName('Sphere').material.color.set("");
 
 
 
-
-
 // Load texture
-const rectangleTexture = textureLoader.load('/name.jpg');
+let texture = textureLoader.load('/name.jpg');
 // add rectangle
 const rectangleGeometry = new THREE.BoxGeometry( 1, 0.7, 0.07 );
 const rectangleMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff} );
-rectangleMaterial.map = rectangleTexture;
+rectangleMaterial.map = texture;
 rectangleMaterial.material = THREE.DoubleSide;
 
 const rectangle = new THREE.Mesh( rectangleGeometry, rectangleMaterial );
@@ -125,9 +126,12 @@ glazeColors.addEventListener('click', (e) => {
 });
 
 //logo
+
 // when checkbox rectangle is checked, show rectangleGeometry
 document.querySelector('#rectangle').addEventListener('click', () => {
   if (document.querySelector('#rectangle').checked) {
+    texture = textureLoader.load(document.querySelector('#uploadedimage').getAttribute("src"));
+    rectangleMaterial.map = texture;
     rectangle.visible = true;
   } else {
     rectangle.visible = false;
@@ -138,6 +142,8 @@ document.querySelector('#rectangle').addEventListener('click', () => {
 document.querySelector('#square').addEventListener('click', () => {
   if (document.querySelector('#square').checked) {
     square.visible = true;
+    // square.material.color.set(uploadedImage.getAttribute("src"));
+    square.material.color.set(url("https://res.cloudinary.com/dphelzfrb/image/upload/v1670710669/vakcmzhimrjwqci3mohv.png"));
   } else {
     square.visible = false;
   }
@@ -161,6 +167,10 @@ document.querySelector('#oval').addEventListener('click', () => {
   }
 });
 
+
+      
+
+// console.log(document.getElementById("uploadedimage").getAttribute("src"));
 
 
 

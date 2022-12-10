@@ -1,5 +1,6 @@
 const cloudName = "dphelzfrb";
 const uploadPreset = "ojcpkqqc";
+let image;
 
 const myWidget = cloudinary.createUploadWidget(
   {
@@ -20,6 +21,11 @@ const myWidget = cloudinary.createUploadWidget(
   (error, result) => {
     if (!error && result && result.event === "success") {
       console.log(result.info);
+      image = result.info.secure_url;
+      document
+        .getElementById("uploadedimage")
+        .setAttribute("src", result.info.secure_url);
+    
       // add result.info.secure_url to database
     }else if(error){
       console.log(error);
