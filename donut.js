@@ -44,19 +44,16 @@ config.getObjectByName('Sphere').material.color.set("");
 
 
 // Load texture
-let texture = textureLoader.load('/name.jpg');
+let texture 
 // add rectangle
 const rectangleGeometry = new THREE.BoxGeometry( 1, 0.7, 0.07 );
 const rectangleMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff} );
-rectangleMaterial.map = texture;
-rectangleMaterial.material = THREE.DoubleSide;
-
 const rectangle = new THREE.Mesh( rectangleGeometry, rectangleMaterial );
-
 scene.add( rectangle);
 rectangle.position.y = 0.7;
 rectangle.position.z = -0.5;
 rectangle.rotation.x = -1.2;
+rectangle.visible = true;
 
 
 // add square
@@ -130,6 +127,12 @@ glazeColors.addEventListener('click', (e) => {
 // when checkbox rectangle is checked, show rectangleGeometry
 document.querySelector('#rectangle').addEventListener('click', () => {
   if (document.querySelector('#rectangle').checked) {
+    document.querySelector('#square').checked = false;
+    square.visible = false;
+    document.querySelector('#oval').checked = false;
+    oval.visible = false;
+    document.querySelector('#circle').checked = false;
+    circle.visible = false;
     texture = textureLoader.load(document.querySelector('#uploadedimage').getAttribute("src"));
     rectangleMaterial.map = texture;
     rectangle.visible = true;
@@ -141,6 +144,12 @@ document.querySelector('#rectangle').addEventListener('click', () => {
 // when checkbox square is checked, show squareGeometry
 document.querySelector('#square').addEventListener('click', () => {
   if (document.querySelector('#square').checked) {
+    document.querySelector('#rectangle').checked = false;
+    rectangle.visible = false;
+    document.querySelector('#oval').checked = false;
+    oval.visible = false;
+    document.querySelector('#circle').checked = false;
+    circle.visible = false;
     texture = textureLoader.load(document.querySelector('#uploadedimage').getAttribute("src"));
     squareMaterial.map = texture;
     square.visible = true;
@@ -152,6 +161,12 @@ document.querySelector('#square').addEventListener('click', () => {
 //when checkbox circle is checked, show circleGeometry
 document.querySelector('#circle').addEventListener('click', () => {
   if (document.querySelector('#circle').checked) {
+    document.querySelector('#square').checked = false;
+    square.visible = false;
+    document.querySelector('#oval').checked = false;
+    oval.visible = false;
+    document.querySelector('#rectangle').checked = false;
+    rectangle.visible = false;
     texture = textureLoader.load(document.querySelector('#uploadedimage').getAttribute("src"));
     circleMaterial.map = texture;
     circle.visible = true;
@@ -163,6 +178,12 @@ document.querySelector('#circle').addEventListener('click', () => {
 //when checkbox oval is checked, show ovalGeometry
 document.querySelector('#oval').addEventListener('click', () => {
   if (document.querySelector('#oval').checked) {
+    document.querySelector('#square').checked = false;
+    square.visible = false;
+    document.querySelector('#rectangle').checked = false;
+    rectangle.visible = false;
+    document.querySelector('#circle').checked = false;
+    circle.visible = false;
     texture = textureLoader.load(document.querySelector('#uploadedimage').getAttribute("src"));
     ovalMaterial.map = texture;oval.visible = true;
   } else {
