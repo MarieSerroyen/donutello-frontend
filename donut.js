@@ -141,9 +141,9 @@ document.querySelector('#rectangle').addEventListener('click', () => {
 // when checkbox square is checked, show squareGeometry
 document.querySelector('#square').addEventListener('click', () => {
   if (document.querySelector('#square').checked) {
+    texture = textureLoader.load(document.querySelector('#uploadedimage').getAttribute("src"));
+    squareMaterial.map = texture;
     square.visible = true;
-    // square.material.color.set(uploadedImage.getAttribute("src"));
-    square.material.color.set(url("https://res.cloudinary.com/dphelzfrb/image/upload/v1670710669/vakcmzhimrjwqci3mohv.png"));
   } else {
     square.visible = false;
   }
@@ -152,6 +152,8 @@ document.querySelector('#square').addEventListener('click', () => {
 //when checkbox circle is checked, show circleGeometry
 document.querySelector('#circle').addEventListener('click', () => {
   if (document.querySelector('#circle').checked) {
+    texture = textureLoader.load(document.querySelector('#uploadedimage').getAttribute("src"));
+    circleMaterial.map = texture;
     circle.visible = true;
   } else {
     circle.visible = false;
@@ -161,7 +163,8 @@ document.querySelector('#circle').addEventListener('click', () => {
 //when checkbox oval is checked, show ovalGeometry
 document.querySelector('#oval').addEventListener('click', () => {
   if (document.querySelector('#oval').checked) {
-    oval.visible = true;
+    texture = textureLoader.load(document.querySelector('#uploadedimage').getAttribute("src"));
+    ovalMaterial.map = texture;oval.visible = true;
   } else {
     oval.visible = false;
   }
