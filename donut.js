@@ -285,6 +285,7 @@ const saveButton = document.querySelector('.config-btn');
 
 saveButton.addEventListener('click', (e) => {
   e.preventDefault();
-  console.log('click');
-  // console
+  
+  let imgDonut = renderer.domElement.toDataURL('image/png');
+  console.log(imgDonut);
 });
