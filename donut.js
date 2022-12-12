@@ -285,7 +285,20 @@ const saveButton = document.querySelector('.config-btn');
 
 saveButton.addEventListener('click', (e) => {
   e.preventDefault();
-  
+
   let imgDonut = renderer.domElement.toDataURL('image/png');
-  console.log(imgDonut);
+  
+  fetch("https://donuttello-api-team6.onrender.com/api/v1/donuts", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      donutImage: imgDonut,
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    });
 });
