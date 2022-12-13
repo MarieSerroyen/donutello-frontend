@@ -7,6 +7,8 @@ export default defineConfig({
           main: 'index.html',
           configurator: 'configurator.html',
           confirm: 'confirm.html',
+          donutjs: 'donut.js',
+          uploadwidget: "upload_widget.js"
         }
       }
     }
