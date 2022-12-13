@@ -228,7 +228,6 @@ document.querySelector('#topping-1').addEventListener('click', () => {
 
 const saveButton = document.querySelector('.config-btn');
 saveButton.addEventListener('click', (e) => {
-  e.preventDefault();
 
   let imgDonut = renderer.domElement.toDataURL('image/png');
   let amount = document.querySelector('#amount').value;
@@ -298,7 +297,8 @@ saveButton.addEventListener('click', (e) => {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      localStorage.clear();
       window.location.href = "confirm.html";
+      localStorage.clear();
+
     });
 });
