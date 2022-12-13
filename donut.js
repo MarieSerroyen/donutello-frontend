@@ -119,8 +119,9 @@ glazeColors.addEventListener('click', (e) => {
     config.traverse((child) => {
       if (child.isMesh) {
         config.getObjectByName('glaze').material.color.set(e.target.dataset.color);
-        /*let flavour = e.target.dataset.flavour;
-        console.log(flavour);*/
+        let flavour = e.target.dataset.flavour;
+        console.log(flavour);
+        localStorage.setItem('Flavour', flavour);
       }
     });
   }
