@@ -1,4 +1,6 @@
-
+body{
+  font-family: 'Dosis', sans-serif;
+}
 .config-box{
   background-color: rgb(236, 234, 234);
   width: 100%;
@@ -39,8 +41,13 @@ h2{
   height: 2em;
   border: none;
   color: var(--primary-color);
+ 
   font-size: 2.5em;
   background-color: rgb(236, 234, 234);
+}
+
+input{
+  font-family: 'Dosis', sans-serif;
 }
 
 .colors{
@@ -108,7 +115,6 @@ h2{
       font-weight: 600;
       cursor: pointer;
       text-decoration: none;
-      text-transform: uppercase;
       display: inline-block;
   }
   
@@ -244,7 +250,8 @@ h3{
       
     }
     .donut{
-      height: 310px;
+      /* height: 310px; */
+      height: 500px;
       width: 1200px;
       padding-left: 500px;
       padding-top: 120px;
