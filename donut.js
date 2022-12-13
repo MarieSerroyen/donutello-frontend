@@ -119,6 +119,8 @@ glazeColors.addEventListener('click', (e) => {
     config.traverse((child) => {
       if (child.isMesh) {
         config.getObjectByName('glaze').material.color.set(e.target.dataset.color);
+        let flavour = e.target.dataset.flavour;
+        console.log(flavour);
       }
     });
   }
@@ -294,6 +296,7 @@ saveButton.addEventListener('click', (e) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
+      base: "Normaal",
       donutImage: imgDonut,
     }),
   })
