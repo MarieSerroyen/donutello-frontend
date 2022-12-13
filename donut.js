@@ -293,6 +293,24 @@ saveButton.addEventListener('click', (e) => {
   let company = document.querySelector('#company').value;
   let makerMail = document.querySelector('#makerMail').value;
   let description = document.querySelector('#description').value;
+
+  //Card types
+  let rectangleCard = document.querySelector('#rectangle').checked;
+  let squareCard = document.querySelector('#square').checked;
+  let circleCard = document.querySelector('#circle').checked;
+  let ovalCard = document.querySelector('#oval').checked;
+
+  let cardType = '';
+
+  if (rectangleCard == true) {
+    cardType = 'Rechthoek';
+  } else if (squareCard == true) {
+    cardType = 'Vierkant';
+  } else if (circleCard == true) {
+    cardType = 'Cirkel';
+  } else if (ovalCard == true) {
+    cardType = 'Ovaal';
+  }
   
   fetch("https://donuttello-api-team6.onrender.com/api/v1/donuts", {
     method: "POST",
@@ -301,6 +319,7 @@ saveButton.addEventListener('click', (e) => {
     },
     body: JSON.stringify({
       base: "Normaal",
+      cardType: cardType,
       amount: amount,
       company: company,
       makerMail: makerMail,
