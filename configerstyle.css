@@ -28,7 +28,7 @@ h2{
   
 }
 
-::placeholder {
+.donutName-input::placeholder {
   color: var(--primary-color);
 }
 
