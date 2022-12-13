@@ -213,7 +213,7 @@ sprinkleColors.addEventListener('click', (e) => {
         console.log(child);
         config.getObjectByName('Sphere').material.color.set(e.target.dataset.color);
         let sprinkelColor = e.target.dataset.sprinkel;
-        console.log(sprinkelColor);
+        localStorage.setItem('Sprinkel', sprinkelColor);
       }
     });
   }
@@ -300,6 +300,7 @@ saveButton.addEventListener('click', (e) => {
   //LocalStorage items
   let logo = localStorage.getItem('Logo');
   let glaze = localStorage.getItem('Flavour');
+  let sprinkelColor = localStorage.getItem('Sprinkel');
 
   //Topping
   let sprinkels = document.querySelector('#topping-1').checked;
@@ -338,7 +339,7 @@ saveButton.addEventListener('click', (e) => {
     body: JSON.stringify({
       base: "Normaal",
       glaze: glaze,
-      topping: topping,
+      topping: topping + ' ' + sprinkelColor,
       logo: logo,
       cardType: cardType,
       amount: amount,
