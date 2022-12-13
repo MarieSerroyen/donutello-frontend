@@ -13,6 +13,8 @@
         <div class="nav__logo"></div>
     </nav>
 
+    <div class="content">
+
     
     <div class="donut">
         <script type="module" src="/donut.js"></script>
@@ -35,6 +37,8 @@
     </div>
     <hr>
         <h2>Logo</h2>
+        <button id="upload_widget" class="logo-button">Upload uw logo</button>
+        <img id="uploadedimage" src=""></img> 
         <div class="logo-wrapper">
             <div class="logo-container">
               <input type="checkbox" id="rectangle" />
@@ -55,11 +59,8 @@
                 <input type="checkbox" id="oval" />
                 <label  for="oval">Ovaal</label>
             </div>
-
-
         </div>
-        <button id="upload_widget" class="logo-button">Upload uw logo</button>
-        <img id="uploadedimage" src=""></img> 
+        
         <hr>
         
         <h2>Toppings</h2>      
@@ -77,6 +78,11 @@
                 </div>
                 </div>
             </div>
+            
+
+    
+    
+    
             
             <div class="sprinkle-colors">
                 <a href ="#" class="recolor-btn" data-color="#86584A" data-sprinkel="Licht bruin"></a>
@@ -112,14 +118,20 @@
                     <input class="form" type="text" id="description" name="omschrijving" placeholder="Opmerking">
                 </div>
             </div>
-        </div>
-
-        <div>
-            <a class="config-btn" href="#">Opslaan</a>
+    
+            <div>
+                <a class="config-btn" href="#">Opslaan</a>
+            </div>
         </div>
     </div>
+    
 </div>
+
+<div class="donut">
+    
 </div>
+<!-- donut three.js -->
+<script type="module" src="/donut.js"></script>
 <!-- cloudinary upload widget -->
 <script 
 src="https://widget.cloudinary.com/v2.0/global/all.js" 

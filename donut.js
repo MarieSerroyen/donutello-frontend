@@ -8,26 +8,41 @@ import { Loader } from 'three';
 
 // console.log(image);
 
-
+//scene & camera
 const scene = new THREE.Scene();
-// change scene background color
 scene.background = new THREE.Color( 0xFFFFFF );
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+const camera = new THREE.PerspectiveCamera( 65, 700 / 500, 0.1, 1000 );
+camera.position.z = 2.5;
+camera.position.y = 1.5;
+camera.position.x = 0;
 
 const renderer = new THREE.WebGLRenderer({
   preserveDrawingBuffer: true,
 });
-renderer.setSize( window.innerWidth, window.innerHeight );
-document.body.appendChild( renderer.domElement );
+renderer.setSize( 700, 500);
+document.querySelector(".donut").appendChild( renderer.domElement );
 
 //add orbit controls
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableZoom = false;
-const dire = new THREE.DirectionalLight(0xffffff, 3);
-dire.position.set(2, 1, 1);
-scene.add(dire);
-camera.position.z = 5;
-camera.position.y = 2;
+
+//light
+// const dire = new THREE.AmbientLight(0xffffff, 4);
+// dire.position.set(2, 1, 1);
+// scene.add(dire);
+// lights
+
+const light = new THREE.DirectionalLight( 0xffffff, 1.5 );
+light.position.set( 1, 1, 1 );
+scene.add( light );
+
+const light2 = new THREE.DirectionalLight( 0xffffff, 1.5 );
+light.position.set( 0, -1, -1 );
+scene.add( light2 );
+
+const light3 = new THREE.AmbientLight( 0xffffff, 1 );
+light3.position.set(2, 1, 1);
+scene.add( light3 );
+
 
 //load texture
 const textureLoader = new THREE.TextureLoader();
