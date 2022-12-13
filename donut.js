@@ -11,14 +11,14 @@ import { Loader } from 'three';
 
 const scene = new THREE.Scene();
 // change scene background color
-scene.background = new THREE.Color( 0xFFFFFF );
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+// scene.background = new THREE.Color( 0xFFFFFF );
+const camera = new THREE.PerspectiveCamera( 65, 700 / 500, 0.1, 1000 );
 
 const renderer = new THREE.WebGLRenderer({
   preserveDrawingBuffer: true,
 });
-renderer.setSize( window.innerWidth, window.innerHeight );
-document.body.appendChild( renderer.domElement );
+renderer.setSize( 700, 500);
+document.querySelector(".donut").appendChild( renderer.domElement );
 
 //add orbit controls
 const controls = new OrbitControls(camera, renderer.domElement);
