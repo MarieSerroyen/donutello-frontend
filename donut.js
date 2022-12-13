@@ -299,5 +299,6 @@ saveButton.addEventListener('click', (e) => {
     .then((data) => {
       console.log(data);
       localStorage.clear();
+      window.location.href = "confirm.html";
     });
 });
