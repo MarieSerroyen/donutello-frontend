@@ -289,6 +289,7 @@ saveButton.addEventListener('click', (e) => {
   e.preventDefault();
 
   let imgDonut = renderer.domElement.toDataURL('image/png');
+  let amount = document.querySelector('#amount').value;
   
   fetch("https://donuttello-api-team6.onrender.com/api/v1/donuts", {
     method: "POST",
@@ -297,6 +298,7 @@ saveButton.addEventListener('click', (e) => {
     },
     body: JSON.stringify({
       base: "Normaal",
+      amount: amount,
       donutImage: imgDonut,
     }),
   })
