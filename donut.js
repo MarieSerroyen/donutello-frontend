@@ -294,8 +294,11 @@ saveButton.addEventListener('click', (e) => {
   let makerMail = document.querySelector('#makerMail').value;
   let description = document.querySelector('#description').value;
 
+  //Topping
   let sprinkels = document.querySelector('#topping-1').checked;
+
   let topping = '';
+
   if (sprinkels == true) {
     topping = 'Sprinkels';
   } else {
