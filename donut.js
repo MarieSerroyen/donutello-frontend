@@ -212,6 +212,8 @@ sprinkleColors.addEventListener('click', (e) => {
       if (child.isMesh) {
         console.log(child);
         config.getObjectByName('Sphere').material.color.set(e.target.dataset.color);
+        let sprinkelColor = e.target.dataset.sprinkel;
+        console.log(sprinkelColor);
       }
     });
   }
