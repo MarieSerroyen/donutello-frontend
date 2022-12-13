@@ -294,6 +294,14 @@ saveButton.addEventListener('click', (e) => {
   let makerMail = document.querySelector('#makerMail').value;
   let description = document.querySelector('#description').value;
 
+  let sprinkels = document.querySelector('#topping-1').checked;
+  let topping = '';
+  if (sprinkels == true) {
+    topping = 'Sprinkels';
+  } else {
+    topping = 'Geen topping';
+  }
+
   //Card types
   let rectangleCard = document.querySelector('#rectangle').checked;
   let squareCard = document.querySelector('#square').checked;
@@ -319,6 +327,7 @@ saveButton.addEventListener('click', (e) => {
     },
     body: JSON.stringify({
       base: "Normaal",
+      topping: topping,
       cardType: cardType,
       amount: amount,
       company: company,
