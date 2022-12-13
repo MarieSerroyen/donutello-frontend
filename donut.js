@@ -296,6 +296,7 @@ saveButton.addEventListener('click', (e) => {
   let company = document.querySelector('#company').value;
   let makerMail = document.querySelector('#makerMail').value;
   let description = document.querySelector('#description').value;
+  let name = document.querySelector('#donutName').value;
 
   //LocalStorage items
   let logo = localStorage.getItem('Logo');
@@ -337,6 +338,7 @@ saveButton.addEventListener('click', (e) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
+      name: name,
       base: "Normaal",
       glaze: glaze,
       topping: topping + ' ' + sprinkelColor,
