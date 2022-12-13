@@ -244,10 +244,8 @@ h3{
       
     }
     .donut{
-      /* position: absolute; */
-      height: 700px;
+      height: 310px;
       width: 1200px;
-      /* left: 500px; */
       padding-left: 500px;
       padding-top: 120px;
       margin-top: 0;

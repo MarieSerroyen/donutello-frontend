@@ -44,19 +44,7 @@ scene.add(light);
 const light2 = new THREE.DirectionalLight(0xffffff, 2);
 light2.position.set(1, -2, -2);
 scene.add(light2);
-// lights
 
-// const light = new THREE.DirectionalLight( 0xffffff, 1.5 );
-// light.position.set( 1, 1, 1 );
-// scene.add( light );
-
-// const light2 = new THREE.DirectionalLight( 0xffffff, 1.5 );
-// light.position.set( 0, -1, -1 );
-// scene.add( light2 );
-
-// const light3 = new THREE.AmbientLight( 0xffffff, 1 );
-// light3.position.set(2, 1, 1);
-// scene.add( light3 );
 
 
 //load texture
