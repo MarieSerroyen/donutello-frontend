@@ -353,6 +353,7 @@ saveButton.addEventListener('click', (e) => {
       makerMail: makerMail,
       description: description,
       donutImage: imgDonut,
+      status: "Start productie",
     }),
   })
     .then((response) => response.json())
