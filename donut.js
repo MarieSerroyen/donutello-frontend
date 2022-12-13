@@ -303,6 +303,10 @@ saveButton.addEventListener('click', (e) => {
   let glaze = localStorage.getItem('Flavour');
   let sprinkelColor = localStorage.getItem('Sprinkel');
 
+  if (sprinkelColor == null) {
+    sprinkelColor = '';
+  }
+
   //Topping
   let sprinkels = document.querySelector('#topping-1').checked;
 
