@@ -250,6 +250,10 @@ footer {
   left: 10px;
 }
 
+#upload_widget{
+  margin-bottom: 15px;
+}
+
 @media (min-width: 500px) {
 
   .nav__logo{
