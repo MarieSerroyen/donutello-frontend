@@ -173,6 +173,10 @@ a {
   margin-bottom: 100px;
 }
 
+.container--confirm {
+  margin-top: 100px;
+}
+
 /*FOOTER*/
 footer {
   background-color: var(--primary-color);
