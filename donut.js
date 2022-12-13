@@ -294,6 +294,8 @@ saveButton.addEventListener('click', (e) => {
   let makerMail = document.querySelector('#makerMail').value;
   let description = document.querySelector('#description').value;
 
+  let logo = localStorage.getItem('Logo');
+
   //Topping
   let sprinkels = document.querySelector('#topping-1').checked;
 
@@ -331,6 +333,7 @@ saveButton.addEventListener('click', (e) => {
     body: JSON.stringify({
       base: "Normaal",
       topping: topping,
+      logo: logo,
       cardType: cardType,
       amount: amount,
       company: company,
