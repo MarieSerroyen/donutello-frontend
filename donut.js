@@ -19,11 +19,18 @@ camera.position.x = 0;
 const renderer = new THREE.WebGLRenderer({
   preserveDrawingBuffer: true,
 });
-renderer.setSize( 700, 500);
+// renderer.setSize( 700, 500);
+if (window.innerWidth < 700) {
+  renderer.setSize( 260, 160);
+} else {
+  renderer.setSize( 700, 500);
+}
 document.querySelector(".donut").appendChild( renderer.domElement );
 
 //add orbit controls
 const controls = new OrbitControls(camera, renderer.domElement);
+//stop zoom
+controls.enableZoom = false;
 
 //light
 // const dire = new THREE.AmbientLight(0xffffff, 4);

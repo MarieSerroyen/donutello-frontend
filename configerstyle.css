@@ -35,10 +35,12 @@ h2{
 }
 
 .donutName-input {
+  width: 80%;
   height: 2em;
   border: none;
   color: var(--primary-color);
   font-size: 2.5em;
+  background-color: rgb(236, 234, 234);
 }
 
 .colors{
@@ -227,6 +229,13 @@ h3{
   margin-bottom: 20px;
   background-color: rgb(236, 234, 234);
 }
+.donut{
+  /* position: absolute; */
+  height: 150px;
+  width: 300px;
+  margin-top: 150px;
+  /* left: 500px; */
+}
 
   @media (min-width: 500px) {
     .config-box{
@@ -241,6 +250,7 @@ h3{
       /* left: 500px; */
       padding-left: 500px;
       padding-top: 120px;
+      margin-top: 0;
     }
     .content{
       display: flex;
