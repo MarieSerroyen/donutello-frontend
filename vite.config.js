@@ -5,7 +5,8 @@ export default defineConfig({
       rollupOptions: {
         input: {
           main: 'index.html',
-          configurator: 'configurator.html'
+          configurator: 'configurator.html',
+          confirm: 'confirm.html',
         }
       }
     }
