@@ -13,6 +13,8 @@ const scene = new THREE.Scene();
 // change scene background color
 // scene.background = new THREE.Color( 0xFFFFFF );
 const camera = new THREE.PerspectiveCamera( 65, 700 / 500, 0.1, 1000 );
+camera.position.z = 5;
+camera.position.y = 2;
 
 const renderer = new THREE.WebGLRenderer({
   preserveDrawingBuffer: true,
@@ -22,12 +24,11 @@ document.querySelector(".donut").appendChild( renderer.domElement );
 
 //add orbit controls
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableZoom = false;
+// controls.enableZoom = false;
 const dire = new THREE.DirectionalLight(0xffffff, 3);
 dire.position.set(2, 1, 1);
 scene.add(dire);
-camera.position.z = 5;
-camera.position.y = 2;
+
 
 //load texture
 const textureLoader = new THREE.TextureLoader();
