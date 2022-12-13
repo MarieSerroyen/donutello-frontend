@@ -292,6 +292,7 @@ saveButton.addEventListener('click', (e) => {
   let amount = document.querySelector('#amount').value;
   let company = document.querySelector('#company').value;
   let makerMail = document.querySelector('#makerMail').value;
+  let description = document.querySelector('#description').value;
   
   fetch("https://donuttello-api-team6.onrender.com/api/v1/donuts", {
     method: "POST",
@@ -303,6 +304,7 @@ saveButton.addEventListener('click', (e) => {
       amount: amount,
       company: company,
       makerMail: makerMail,
+      description: description,
       donutImage: imgDonut,
     }),
   })
