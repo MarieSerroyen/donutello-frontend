@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-    plugins: ["netlify-plugin-cloudinary"],
+    plugins: [netlify-plugin-cloudinary],
       inputs: {
         cloudName: "dphelzfrb",
         deliveryType: "upload",
