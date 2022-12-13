@@ -104,27 +104,12 @@ oval.rotation.x = -1.2;
 oval.visible = false;
 
 
-
-
-
-
-
-
 function animate() {
 requestAnimationFrame( animate );
 renderer.render( scene, camera );
 }
 
 animate();
-
-
-
-
-
-
-
-
-
 
 // Glaze laten veranderen van kleur
 const glazeColors = document.querySelector('.colors');
@@ -211,13 +196,6 @@ document.querySelector('#oval').addEventListener('click', () => {
   }
 });
 
-
-      
-
-// console.log(document.getElementById("uploadedimage").getAttribute("src"));
-
-
-
 // sprinkles laten veranderen van kleur
 const sprinkleColors = document.querySelector('.sprinkle-colors');
 sprinkleColors.addEventListener('click', (e) => {
@@ -234,75 +212,18 @@ sprinkleColors.addEventListener('click', (e) => {
   }
 });
 
-
-
-
-//topping
-
-// when checkbox is unchecked, hide sprinkels
-/*document.querySelector('#topping-1').addEventListener('click', () => {
-  console.log('click');
-  config.traverse((child) => {
-    if (child.isMesh) {
-      config.getObjectByName('Sphere').material.color.set(0x000000);
-      
-    }
-  });
-});*/
-
-
-
-
-
 // when checkbox is unchecked, hide sprinkels
 document.querySelector('#topping-1').addEventListener('click', () => {
   // log donut
   console.log(config.getObjectByName('Sphere'));
   if (document.querySelector('#topping-1').checked) {
-    config.getObjectByName('Sphere').material.color.set(0xffffff);
-
-    // remove sprinkles
-   
-    
-    
-
+    config.getObjectByName('Sphere').material.visible = true;
   } else {
-    config.getObjectByName('Sphere').transparent = true;
-    config.getObjectByName('Sphere').position.x = 0.5;
-
-
-
-    config.getObjectByName('Sphere').material.color.set(0x000000);
-    
+    config.getObjectByName('Sphere').material.visible = false;    
   }
 });
 
-
-
-
-
-
-
-/*
-// remove sprinkles
-const removeSprinkles = document.querySelector('#topping-1');
-removeSprinkles.addEventListener('click', () => {
-  if (removeSprinkles.checked) {
-    config.children[2].material.opacity = 1;
-    console.log(config);
-    // config.getObjectByName('Sphere').visible = false;
-  } else {
-    // config.getObjectByName('Sphere').visible = true;
-    config.children[2].material.opacity = 0;
-
-    console.log(config);
-
-  } 
-});
-*/
-
 const saveButton = document.querySelector('.config-btn');
-
 saveButton.addEventListener('click', (e) => {
   e.preventDefault();
 
