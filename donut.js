@@ -111,7 +111,8 @@ function animate() {
 requestAnimationFrame( animate );
 renderer.render( scene, camera );
 
-config.rotation.y += 0.001;
+scene.rotation.y += 0.01;
+
 
 }
 
