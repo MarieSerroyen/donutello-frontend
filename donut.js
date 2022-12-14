@@ -46,7 +46,6 @@ light2.position.set(1, -2, -2);
 scene.add(light2);
 
 
-
 //load texture
 const textureLoader = new THREE.TextureLoader();
 
