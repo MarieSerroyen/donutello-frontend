@@ -97,7 +97,7 @@ circle.rotation.x = -1.2;
 circle.visible = false;
 
 //add oval
-const ovalGeometry = new THREE.CircleGeometry( 0.5, 32,  );
+const ovalGeometry = new THREE.CircleGeometry( 0.5, 32, );
 const ovalMaterial = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
 const oval = new THREE.Mesh( ovalGeometry, ovalMaterial );
 scene.add( oval );
@@ -111,7 +111,7 @@ function animate() {
 requestAnimationFrame( animate );
 renderer.render( scene, camera );
 
-scene.rotation.y += 0.01;
+scene.rotation.y += 0.001;
 
 
 }
