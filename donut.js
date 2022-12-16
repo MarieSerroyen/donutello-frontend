@@ -126,7 +126,6 @@ glazeColors.addEventListener('click', (e) => {
       if (child.isMesh) {
         config.getObjectByName('glaze').material.color.set(e.target.dataset.color);
         let flavour = e.target.dataset.flavour;
-        console.log(flavour);
         localStorage.setItem('Flavour', flavour);
       }
     });
@@ -209,7 +208,6 @@ sprinkleColors.addEventListener('click', (e) => {
   if (e.target.classList.contains('recolor-btn')) {
     config.traverse((child) => {
       if (child.isMesh) {
-        console.log(child);
         config.getObjectByName('Sphere').material.color.set(e.target.dataset.color);
         let sprinkelColor = e.target.dataset.sprinkel;
         localStorage.setItem('Sprinkel', sprinkelColor);
@@ -220,8 +218,6 @@ sprinkleColors.addEventListener('click', (e) => {
 
 // when checkbox is unchecked, hide sprinkels
 document.querySelector('#topping-1').addEventListener('click', () => {
-  // log donut
-  console.log(config.getObjectByName('Sphere'));
   if (document.querySelector('#topping-1').checked) {
     config.getObjectByName('Sphere').material.visible = true;
   } else {
@@ -299,7 +295,6 @@ saveButton.addEventListener('click', (e) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       window.location.href = "confirm.html";
       localStorage.clear();
 
