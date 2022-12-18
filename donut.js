@@ -65,7 +65,7 @@ config.getObjectByName('Sphere').material.color.set("");
 // Load texture
 let texture 
 // add rectangle
-const rectangleGeometry = new THREE.BoxGeometry( 1, 0.7, 0.07 );
+const rectangleGeometry = new THREE.BoxGeometry( 1, 0.7, );
 const rectangleMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff} );
 const rectangle = new THREE.Mesh( rectangleGeometry, rectangleMaterial );
 scene.add( rectangle);
@@ -76,7 +76,7 @@ rectangle.visible = false;
 
 
 // add square
-const squareGeometry = new THREE.BoxGeometry( 0.7, 0.7, 0.07 );
+const squareGeometry = new THREE.BoxGeometry( 0.7, 0.7, );
 const squareMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff} );
 const square = new THREE.Mesh( squareGeometry, squareMaterial );
 scene.add( square);
