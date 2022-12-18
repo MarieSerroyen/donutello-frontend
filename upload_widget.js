@@ -57,8 +57,9 @@
 // });
 
 let logoUrl;
+doncument.querySelector("#fileElem").addEventListener("change", createUrl);
 const createUrl = () => {
-  let logo = document.querySelector(".imageInput").files[0];
+  let logo = document.querySelector("#fileElem").files[0];
   let formData = new FormData();
   formData.append("file", logo);
   formData.append("upload_preset", "ojcpkqqc");
