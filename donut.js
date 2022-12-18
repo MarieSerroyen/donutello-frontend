@@ -103,6 +103,7 @@ scene.add( oval );
 oval.position.y = 0.7;
 oval.position.z = -0.5;
 oval.rotation.x = -1.2;
+oval.scale.set(1.2, 0.9, 1);
 oval.visible = false;
 
 
