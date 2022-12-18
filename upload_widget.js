@@ -57,7 +57,7 @@
 // });
 
 let logoUrl;
-doncument.querySelector("#fileElem").addEventListener("change", createUrl);
+document.querySelector("#fileElem").addEventListener("change", createUrl);
 const createUrl = () => {
   let logo = document.querySelector("#fileElem").files[0];
   let formData = new FormData();
