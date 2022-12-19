@@ -22,10 +22,12 @@ const renderer = new THREE.WebGLRenderer({
 // renderer.setSize( 700, 500);
 if (window.innerWidth < 700) {
   renderer.setSize( 260, 160);
+  document.querySelector(".donut").appendChild( renderer.domElement );
 } else {
   renderer.setSize( 700, 500);
+  document.querySelector(".donut").appendChild( renderer.domElement );
 }
-document.querySelector(".donut").appendChild( renderer.domElement );
+
 
 //add orbit controls
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -230,6 +232,24 @@ const saveButton = document.querySelector('.config-btn');
 saveButton.addEventListener('click', (e) => {
 
   let imgDonut = renderer.domElement.toDataURL('image/png');
+
+  let donutImgUrl = '';
+  const formData = new FormData();
+  formData.append('file', imgDonut);
+  formData.append("upload_preset", "ojcpkqqc");
+
+  fetch("https://api.cloudinary.com/v1_1/dphelzfrb/image/upload", {
+    method: "POST",
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+      console.log(data)
+      donutImgUrl = data.secure_url;
+      localStorage.setItem('DonutImg', donutImgUrl);
+      
+  })
+
   let amount = document.querySelector('#amount').value;
   let company = document.querySelector('#company').value;
   let makerMail = document.querySelector('#makerMail').value;
@@ -240,6 +260,7 @@ saveButton.addEventListener('click', (e) => {
   let logo = localStorage.getItem('Logo');
   let glaze = localStorage.getItem('Flavour');
   let sprinkelColor = localStorage.getItem('Sprinkel');
+  let donutImg = localStorage.getItem('DonutImg');
 
   if (sprinkelColor == null) {
     sprinkelColor = '';
@@ -274,31 +295,38 @@ saveButton.addEventListener('click', (e) => {
     cardType = 'Ovaal';
   }
   
-  fetch("https://donuttello-api-team6.onrender.com/api/v1/donuts", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    mode: "cors",
-    body: JSON.stringify({
-      name: name,
-      base: "Normaal",
-      glaze: glaze,
-      topping: topping + ' ' + sprinkelColor,
-      logo: logo,
-      cardType: cardType,
-      amount: amount,
-      company: company,
-      makerMail: makerMail,
-      description: description,
-      donutImage: imgDonut,
-      status: "In afwachting",
-    }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      window.location.href = "confirm.html";
-      localStorage.clear();
+  try {
+    fetch("https://donuttello-api-team6.onrender.com/api/v1/donuts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      mode: 'cors',
+      credentials: 'include',
+      body: JSON.stringify({
+        name: name,
+        base: "Normaal",
+        glaze: glaze,
+        topping: topping + ' ' + sprinkelColor,
+        logo: logo,
+        cardType: cardType,
+        amount: amount,
+        company: company,
+        makerMail: makerMail,
+        description: description,
+        donutImage: donutImg,
+        status: "In afwachting",
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        //console.log(data);
+        setTimeout( () => window.location.href = "confirm.html", 3000);
+        //localStorage.clear();
+  
+      });
+  }catch(error){
+    console.log("error");
+  }
 
-    });
 });
