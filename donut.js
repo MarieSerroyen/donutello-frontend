@@ -244,14 +244,11 @@ saveButton.addEventListener('click', (e) => {
   })
   .then(response => response.json())
   .then(data => {
-      console.log(data)
       donutImgUrl = data.secure_url;
       localStorage.setItem('DonutImg', donutImgUrl);
       saveDonut();
       
   })
-  
-
 
 });
 
