@@ -22,7 +22,6 @@ const myWidget = cloudinary.createUploadWidget(
   },
   (error, result) => {
     if (!error && result && result.event === "success") {
-      console.log(result.info);
       image = result.info.secure_url;
       localStorage.setItem("Logo", image);
       document.getElementById("uploadedimage").style.display = "inline";

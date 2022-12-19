@@ -247,9 +247,15 @@ saveButton.addEventListener('click', (e) => {
       console.log(data)
       donutImgUrl = data.secure_url;
       localStorage.setItem('DonutImg', donutImgUrl);
+      saveDonut();
       
   })
+  
 
+
+});
+
+function saveDonut() {
   let amount = document.querySelector('#amount').value;
   let company = document.querySelector('#company').value;
   let makerMail = document.querySelector('#makerMail').value;
@@ -294,9 +300,8 @@ saveButton.addEventListener('click', (e) => {
   } else if (ovalCard == true) {
     cardType = 'Ovaal';
   }
-  
-  try {
-    fetch("https://donuttello-api-team6.onrender.com/api/v1/donuts", {
+
+  fetch("https://donuttello-api-team6.onrender.com/api/v1/donuts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -321,12 +326,8 @@ saveButton.addEventListener('click', (e) => {
       .then((response) => response.json())
       .then((data) => {
         //console.log(data);
-        setTimeout( () => window.location.href = "confirm.html", 3000);
-        //localStorage.clear();
+        window.location.href = "confirm.html";
+        localStorage.clear();
   
       });
-  }catch(error){
-    console.log("error");
-  }
-
-});
+}
