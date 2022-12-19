@@ -2,6 +2,8 @@ const cloudName = "dphelzfrb";
 const uploadPreset = "ojcpkqqc";
 let image;
 
+document.getElementById("uploadedimage").style.display = "none";
+
 const myWidget = cloudinary.createUploadWidget(
   {
     cloudName: cloudName,
@@ -23,10 +25,8 @@ const myWidget = cloudinary.createUploadWidget(
       console.log(result.info);
       image = result.info.secure_url;
       localStorage.setItem("Logo", image);
-      document
-        .getElementById("uploadedimage")
-        .setAttribute("src", result.info.secure_url);
-    
+      document.getElementById("uploadedimage").style.display = "inline";
+      document.getElementById("uploadedimage").setAttribute("src", result.info.secure_url);
       // add result.info.secure_url to database
     }else if(error){
       console.log(error);

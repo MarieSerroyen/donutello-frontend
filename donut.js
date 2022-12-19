@@ -65,8 +65,8 @@ config.getObjectByName('Sphere').material.color.set("");
 // Load texture
 let texture 
 // add rectangle
-const rectangleGeometry = new THREE.BoxGeometry( 1, 0.7, 0.07 );
-const rectangleMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff} );
+const rectangleGeometry = new THREE.BoxGeometry( 1, 0.7, 0.02 );
+const rectangleMaterial = new THREE.MeshBasicMaterial( {color: 0xffffff} );
 const rectangle = new THREE.Mesh( rectangleGeometry, rectangleMaterial );
 scene.add( rectangle);
 rectangle.position.y = 0.7;
@@ -76,8 +76,8 @@ rectangle.visible = false;
 
 
 // add square
-const squareGeometry = new THREE.BoxGeometry( 0.7, 0.7, 0.07 );
-const squareMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff} );
+const squareGeometry = new THREE.BoxGeometry( 0.7, 0.7, 0.02 );
+const squareMaterial = new THREE.MeshBasicMaterial( {color: 0xffffff} );
 const square = new THREE.Mesh( squareGeometry, squareMaterial );
 scene.add( square);
 square.position.y = 0.7;
@@ -97,7 +97,7 @@ circle.visible = false;
 
 //add oval
 const ovalGeometry = new THREE.CircleGeometry( 0.5, 32, );
-const ovalMaterial = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
+const ovalMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff } );
 const oval = new THREE.Mesh( ovalGeometry, ovalMaterial );
 scene.add( oval );
 oval.position.y = 0.7;
